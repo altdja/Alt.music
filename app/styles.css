@@ -1,0 +1,29 @@
+body {
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px !important;
+}
+
+.track-box {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+ul:nth-child(2n) {
+  background: #f0f0f0;
+}
+
+ul:nth-child(1) {
+  background: #666;
+  color: #fff;
+}
+
+.fa {
+  cursor: pointer;
+  margin-bottom: 15px;
+  margin-left: 5px;
+}

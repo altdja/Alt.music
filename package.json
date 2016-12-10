@@ -1,0 +1,19 @@
+{
+  "name": "audiovk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "author": "Alt",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "axios": "^0.14.0",
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.0",
+    "nodemon": "^1.10.2",
+    "path": "^0.12.7"
+  }
+}
