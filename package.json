@@ -1,19 +1,23 @@
 {
-  "name": "audiovk",
+  "name": "alt.music",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon",
+    "webpack": "webpack-dev-server --history-api-fallback --progress"
   },
   "author": "Alt",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.5.8",
+    "angular": "^1.6.0",
     "axios": "^0.14.0",
     "bootstrap": "^3.3.7",
     "express": "^4.14.0",
-    "nodemon": "^1.10.2",
-    "path": "^0.12.7"
+    "lame": "^1.2.4",
+    "nodemon": "^1.11.0",
+    "path": "^0.12.7",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
   }
 }

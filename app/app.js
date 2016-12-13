@@ -1,12 +1,7 @@
-'use strict';
+import angular from 'angular';
+import routing from './app.config';
 
-const app = angular.module('app', []);
-
-app.controller('appController', function appController($scope, $window) {
-  fs.readFile('/etc/passwd', function (err, data ) {
-    if (err) {
-      console.log(err);
-    }
-    console.log(data);
-  });
-});
+angular.module('app', []).config(routing).run(['$rootScope', '$state', '$stateParams', (scope, $state, $stateParams) => {
+  scope.$state = $state;
+  scope.$stateParams = $stateParams;
+}])
