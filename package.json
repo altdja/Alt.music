@@ -1,10 +1,11 @@
 {
-  "name": "audiovk",
+  "name": "alt.music",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon",
+    "webpack": "webpack-dev-server --history-api-fallback --progress"
   },
   "author": "Alt",
   "repository": {
