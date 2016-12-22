@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon",
-    "webpack": "webpack-dev-server --history-api-fallback --progress"
+    "frontend": "webpack-dev-server --history-api-fallback --progress"
   },
   "author": "Alt",
   "repository": {

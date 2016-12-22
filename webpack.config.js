@@ -7,7 +7,7 @@ const ROOT_PATH = path.resolve(__dirname);
 module.exports = {
     entry: "./client/app/app",
     output: {
-        path: __dirname + '/client/public/',
+        path: __dirname + '/build',
         filename: "bundle.js"
     },
     module: {
