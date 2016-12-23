@@ -39,7 +39,8 @@ module.exports = {
     // devtool: 'source-map',
     devServer:{
         historyApiFallback: true,
-        inline: true
+        inline: true,
+        contentBase: 'client/app/public/'
     },
     plugins: [
         // new webpack.optimize.UglifyJsPlugin({minimize: true}),
