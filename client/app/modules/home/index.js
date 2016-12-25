@@ -1,11 +1,14 @@
-import template from './index.html';
-import controller from './controller';
-import './style.css';
+import angular from 'angular';
+import ngAudio from 'angular-audio';
 
-let Home = {
-    template,
-    controller,
-    replace: true
-};
+import routing from './routes';
+import HomeController from './controller';
 
-export default Home;
+export default angular.module('app.Homepage', [ngAudio])
+  .config(routing)
+  .component('homepage', {
+      template: require('./homepage.html'),
+      controller: ['$scope', '$state', ngAudio, HomeController],
+      controllerAs: '$ctrl'
+  })
+  .name;

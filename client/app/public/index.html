@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="app">
   <head>
     <base href="/">
     <meta charset="utf-8">
@@ -8,10 +8,11 @@
     <meta name="description" content="">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="styles.css">
   </head>
 
-  <body ng-app="app" ng-strict-di ng-cloak>
-    <app></app>
+  <body ng-strict-di ng-cloak>
+    <ui-view></ui-view>
     <script src="bundle.js"></script>
   </body>
 </html>

@@ -1,9 +1,15 @@
 import angular from 'angular';
-import ngRoute from 'angular-route';
+import uiRouter from 'angular-ui-router';
+import routing from './app.config';
 
-import Home from './modules/home/index.js';
+import Home from './modules/home';
 
 angular.module('app', [
-  'ngRoute'
+  uiRouter,
+  Home
 ])
-.component('app', Home)
+.config(routing)
+.run(['$rootScope', '$state', '$stateParams', (scope, $state, $stateParams) => {
+  scope.$state = $state;
+  scope.$stateParams = $stateParams
+}]);
