@@ -17,13 +17,10 @@ export default class HomepageController {
   }
 
   load() {
-    axios.get({
-      url: 'https://localhost:8081/tracklist',
-      headers: {
-        'Cache-Control': 'no-cache,no-store,must-revalidate,max-age=-1,private',
-        Expires: -1
-      }
-    })
+    axios.get('http://localhost:8081/tracklist')
+      .then(data => {
+        console.log(data);
+      })
   }
 
   play() {
