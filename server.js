@@ -5,7 +5,7 @@ const path = require('path');
 const fs = require('fs');
 const cors = require('cors');
 const morgan = require('morgan');
-const config = require('./config/local');
+// const config = require('./config/local');
 
 const app = express();
 
