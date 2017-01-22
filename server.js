@@ -8,6 +8,7 @@ const morgan = require('morgan');
 // const config = require('./config/local');
 
 const app = express();
+app.use(express.static(__dirname + '/build'));
 
 app.use(cors());
 app.use(morgan('combined'));
