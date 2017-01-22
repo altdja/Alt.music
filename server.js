@@ -16,23 +16,7 @@ app.listen(8081, function () {
   console.log(`Alt.music app listening on port 8081!`);
 });
 
-app.get('/audio/track.mp3', function(req, res) {
-  // const rstream = fs.createReadStream('./public/1.mp3');
-  // rstream.pipe(res);
-
-  const stream = fs.createReadStream('./public/1.mp3', {'bufferSize': 512*12})
-  stream.pipe(res);
-});
-
-app.get('/tracklist', function (req, res) {
-  const PATH = './client/app/public/tracks/';
-  fs.readdir(PATH, (err, files) => {
-    if (err) {
-      res.status(500).send({
-        code: 500,
-        message: "Backend error"
-      });
-    }
-    return res.status(200).send(files)
-  });
+app.get('/', function (req, res) {
+    return res.sendFile(path.join(__dirname+'/client/app/public/index.html'));
+    // return res.status(200).send(files);
 });
