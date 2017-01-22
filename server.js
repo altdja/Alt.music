@@ -12,8 +12,8 @@ const app = express();
 app.use(cors());
 app.use(morgan('combined'));
 
-app.listen(config.server.port, function () {
-  console.log(`Alt.music app listening on port ${config.server.port}!`);
+app.listen(8081, function () {
+  console.log(`Alt.music app listening on port 8081!`);
 });
 
 app.get('/audio/track.mp3', function(req, res) {
