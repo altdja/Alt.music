@@ -19,5 +19,4 @@ app.listen(8081, function () {
 
 app.get('/', function (req, res) {
     return res.sendFile(path.join(__dirname+'/client/app/public/index.html'));
-    // return res.status(200).send(files);
 });
