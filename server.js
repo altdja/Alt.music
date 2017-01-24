@@ -17,6 +17,6 @@ app.listen(8081, function () {
   console.log(`Alt.music app listening on port 8081!`);
 });
 
-app.get('/', function (req, res) {
+app.all('*', function (req, res) {
     return res.sendFile(path.join(__dirname+'/client/app/public/index.html'));
 });
