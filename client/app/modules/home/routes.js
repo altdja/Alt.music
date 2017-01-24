@@ -1,7 +1,7 @@
 function routes($stateProvider) {
     $stateProvider
         .state('homepage', {
-            url: '/home',
+            url: '/',
             template: '<homepage></homepage>'
         });
 }
