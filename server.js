@@ -13,6 +13,20 @@ app.use(express.static(__dirname + '/build'));
 app.use(cors());
 app.use(morgan('combined'));
 
+const audioFolder = '/project/public/tracks';
+let playlist; 
+fs.readdir(audioFolder, (err, files) => {
+  if (err) { return console.log(err) }
+  files.forEach(file => {
+    playlist += `/project/public/tracks/${file}\r\ny`;
+  });
+
+  fs.writeFile("/etc/ices2/playlist.txt", playlist, function(err) {
+    if (err) { return console.log(err) }
+    console.log("New playlist.txt created. Path: /etc/ices2/playlist.txt");
+  });
+})
+
 app.listen(8081, function () {
   console.log(`Alt.music app listening on port 8081!`);
 });
