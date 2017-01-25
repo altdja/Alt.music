@@ -14,11 +14,11 @@ app.use(cors());
 app.use(morgan('combined'));
 
 const audioFolder = '/project/public/tracks';
-let playlist; 
+let playlist = ''; 
 fs.readdir(audioFolder, (err, files) => {
   if (err) { return console.log(err) }
   files.forEach(file => {
-    playlist += `/project/public/tracks/${file}\r\ny`;
+    playlist += `/project/public/tracks/${file}\r\n`;
   });
 
   fs.writeFile("/etc/ices2/playlist.txt", playlist, function(err) {
