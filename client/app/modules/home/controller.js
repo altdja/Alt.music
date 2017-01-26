@@ -9,7 +9,7 @@ export default class HomepageController {
   constructor($scope, $state) {
     this.scope = $scope;
     this.state = $state;
-    this.moment = moment;
+    // this.moment = moment;
     // this.audio = new window.AudioContext();
   }
 }
