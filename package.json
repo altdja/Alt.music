@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node ./server.js"
+    "start": "node ./server.js",
+    "build": "webpack",
+    "dev": "webpack-dev-server"
   },
   "author": "Alt",
   "repository": {
@@ -29,7 +31,7 @@
     "nodemon": "^1.11.0",
     "path": "^0.12.7",
     "style-loader": "^0.13.1",
-    "webpack": "^1.12.14"
+    "webpack": "^1.14.0"
   },
   "devDependencies": {
     "babel-core": "^6.7.2",
