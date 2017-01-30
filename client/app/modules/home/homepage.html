@@ -1,4 +1,7 @@
 <div class="container">
-  <button ng-click="$ctrl.play();" class="audio">Play</button>
-  <img src="build/loading.gif" alt="">
+  <div class="button" ng-click="$ctrl.play();" class="audio">
+    <p ng-if="!$ctrl.played">Play</p>
+    <img ng-if="$ctrl.loader" class="loader" src="/img/loading.gif" alt="">
+    <p ng-if="$ctrl.played && !$ctrl.loader">Stop</p>    
+  </div>
 </div>

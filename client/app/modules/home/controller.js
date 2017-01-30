@@ -12,16 +12,19 @@ export default class HomepageController {
     this.scope = $scope;
     this.state = $state;
     this.played = false;
+    this.loader = false;
     this.output =  new Audio();
     document.body.appendChild(this.output);
   }
   
   play() {
     if (!this.played) {
+      this.loader = true;      
       this.output.src = src;
       this.output.play()
         .then(() => {
-          console.log('!!!');
+          this.loader = false;
+          this.scope.$apply();
         });
       this.played = true;
     } else {

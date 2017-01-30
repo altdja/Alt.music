@@ -5,9 +5,17 @@ html {
     justify-content: center;
 }
 
-button {
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 60px;
     width: 100px;
     border-radius: 3px;
     border: 1px solid black;
+}
+
+.loader {
+    height: 25px;
+    margin-right: 3px;
 }
