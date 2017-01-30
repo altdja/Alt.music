@@ -13,9 +13,15 @@ html {
     width: 100px;
     border-radius: 3px;
     border: 1px solid black;
+    background-color: white;
+    margin-bottom: 10px;
 }
 
 .loader {
     height: 25px;
     margin-right: 3px;
+}
+
+.volume {
+    width: 97px;
 }

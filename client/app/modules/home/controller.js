@@ -15,6 +15,11 @@ export default class HomepageController {
     this.loader = false;
     this.output =  new Audio();
     document.body.appendChild(this.output);
+    this.volume = 50;
+  }
+
+  changeVolume(val) {
+    this.output.volume = val / 100;
   }
   
   play() {
