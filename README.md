@@ -8,7 +8,7 @@ AudioVK
     }
     ```
 3. Run: 
-  - Build bandle.js use `webpcack`;
+  - Build bandle.js use `webpack`;
   - Run webpack `npm start`;
   - Run backend server `node server.js`;
   - Go to `localhost:8080`

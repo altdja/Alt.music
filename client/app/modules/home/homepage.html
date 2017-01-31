@@ -1,12 +1,22 @@
 
 <div class="container">
-  <button class="button" ng-click="$ctrl.play();" ng-disabled="$ctrl.loader">
-    <p ng-if="!$ctrl.played">Play</p>
-    <img ng-if="$ctrl.loader" class="loader" src="/img/loading.gif" alt="">
-    <p ng-if="$ctrl.played && !$ctrl.loader">Stop</p>
-  </button>
+  <div class="row">
+    <div class="content">
+      <button class="button" ng-click="$ctrl.play();" ng-disabled="$ctrl.loader">
+        <p ng-if="!$ctrl.played">Play</p>
+        <img ng-if="$ctrl.loader" class="loader" src="/img/loading.gif" alt="">
+        <p ng-if="$ctrl.played && !$ctrl.loader">Stop</p>
+      </button>
 
-  <p class="text" ng-model="$ctrl.value">Громкость: {{$ctrl.value}}%</p>
-  <input class="volume" type="range" name="range" ng-model="$ctrl.value" ng-change="$ctrl.changeVolume($ctrl.value);" min="0"  max="100">
+      <p class="text" ng-model="$ctrl.value">Громкость: {{$ctrl.value}}%</p>
+      <input class="volume" type="range" name="range" ng-model="$ctrl.value" ng-change="$ctrl.changeVolume($ctrl.value);" min="0"  max="100">
+    </div>
+    <div class="blur">
+      <img class="bg-blur" alt="">  
+    </div>
+  </div>
+  <div class="bg-container">
+    <img class="bg-blur" src="" alt="">
+  </div>
 </div>
 
