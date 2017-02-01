@@ -20,7 +20,7 @@ body {
 
 .content {
     width: 300px;
-    height: 130px;
+    height: 100px;
     position: absolute;
     margin: auto;
     left: 0;
@@ -28,6 +28,11 @@ body {
     right: 0;
     bottom: 0;
     z-index: 2;
+}
+
+.content h1 {
+    text-align: center;
+    color: white;
 }
 
 .bg-container {
@@ -50,6 +55,14 @@ body {
     min-height: 100%;
 }
 
+.logo {
+    width: 50%;
+    position: absolute;
+    z-index: 1;
+    left: 25%;
+    top: 10%;
+}
+
 .blur {
     height: 100%;
     width: 100%;
@@ -69,13 +82,14 @@ body {
 }
 
 .button {
+    position: relative;
     height: 65px;
     border-radius: 3px;
     border: none;
     font-family: Trebuchet MS, "Helvetica CY", "Nimbus Sans L", sans-serif;
     font-size: 18px;
     width: 100%;
-    margin: 30px 0;
+    margin: 0 0 15px 0;
     background-color: rgba(228, 225, 225, 0.4);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .4);
     color: white;
@@ -100,4 +114,132 @@ body {
     .row {
         width: inherit;
     }
+}
+
+/*LOADER*/
+
+.wrapper {
+	position: absolute;
+    /* padding-left: 1em; */
+    /* padding-right: 1em; */
+    /* margin: auto; */
+    /* display: block; */
+    /* width: 195px; */
+    top: -46px;
+    left: 70px;
+}
+
+.cssload-loader {
+	width: 49px;
+	height: 49px;
+	border-radius: 50%;
+	margin: 3em;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+}
+
+.cssload-loader {
+	width: 49px;
+	height: 49px;
+	border-radius: 50%;
+	margin: 3em;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+}
+.cssload-loader,
+.cssload-loader:before,
+.cssload-loader:after {
+	animation: 1.15s infinite ease-in-out;
+		-o-animation: 1.15s infinite ease-in-out;
+		-ms-animation: 1.15s infinite ease-in-out;
+		-webkit-animation: 1.15s infinite ease-in-out;
+		-moz-animation: 1.15s infinite ease-in-out;
+}
+.cssload-loader:before,
+.cssload-loader:after {
+	width: 100%; 
+	height: 100%;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.cssload-loader:before,
+.cssload-loader:after {
+		content: "";
+}
+
+.cssload-loader {
+		/*background-color: white;*/
+		animation: cssload-flower-fan 0.46s infinite linear;
+		-o-animation: cssload-flower-fan 0.46s infinite linear;
+		-ms-animation: cssload-flower-fan 0.46s infinite linear;
+		-webkit-animation: cssload-flower-fan 0.46s infinite linear;
+		-moz-animation: cssload-flower-fan 0.46s infinite linear;
+}
+.cssload-loader:before{
+	content: "";
+	width: 80%;
+	height: 80%;
+	/*background-color: white;*/
+	top: 10%;
+	left: 10%;
+	box-shadow: 5px -3px 0 rgba(255,100,100,0.7),
+				5px 5px 0 rgba(100,255,100,0.7),
+				-3px 5px 0 rgba(100,100,255,0.7),
+				-5px -5px 0 rgba(240,240,120,0.7);
+		-o-box-shadow: 5px -3px 0 rgba(255,100,100,0.7),
+				5px 5px 0 rgba(100,255,100,0.7),
+				-3px 5px 0 rgba(100,100,255,0.7),
+				-5px -5px 0 rgba(240,240,120,0.7);
+		-ms-box-shadow: 5px -3px 0 rgba(255,100,100,0.7),
+				5px 5px 0 rgba(100,255,100,0.7),
+				-3px 5px 0 rgba(100,100,255,0.7),
+				-5px -5px 0 rgba(240,240,120,0.7);
+		-webkit-box-shadow: 5px -3px 0 rgba(255,100,100,0.7),
+				5px 5px 0 rgba(100,255,100,0.7),
+				-3px 5px 0 rgba(100,100,255,0.7),
+				-5px -5px 0 rgba(240,240,120,0.7);
+		-moz-box-shadow: 5px -3px 0 rgba(255,100,100,0.7),
+				5px 5px 0 rgba(100,255,100,0.7),
+				-3px 5px 0 rgba(100,100,255,0.7),
+				-5px -5px 0 rgba(240,240,120,0.7);
+}
+.cssload-loader:after{
+	content: "";
+	/*border: 3px solid white;*/
+	z-index: 2;
+	top: -3px;
+	left: -3px;
+}
+
+
+
+
+@keyframes cssload-flower-fan {
+	0%	 { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+@-o-keyframes cssload-flower-fan {
+	0%	 { -o-transform: rotate(0deg); }
+	100% { -o-transform: rotate(360deg); }
+}
+
+@-ms-keyframes cssload-flower-fan {
+	0%	 { -ms-transform: rotate(0deg); }
+	100% { -ms-transform: rotate(360deg); }
+}
+
+@-webkit-keyframes cssload-flower-fan {
+	0%	 { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+
+@-moz-keyframes cssload-flower-fan {
+	0%	 { -moz-transform: rotate(0deg); }
+	100% { -moz-transform: rotate(360deg); }
 }
