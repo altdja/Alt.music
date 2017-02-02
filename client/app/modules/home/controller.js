@@ -1,8 +1,6 @@
 'use strict';
 
 import './styles.css';
-// import moment from 'moment';
-// import axios from 'axios';
 import $ from 'jquery';
 
 const src = 'http://91.240.87.220:8000/stream.mp3';
@@ -15,7 +13,18 @@ export default class HomepageController {
     this.loader = false;
     this.output =  new Audio();
     document.body.appendChild(this.output);
+    this.output.id = 'audio';
     this.volume = 50;
+    this.stopPlayingFix()
+  }
+
+  stopPlayingFix() {
+    const audio = $('#audio')[0];
+    audio.onended = audio.onerror = function()
+    {
+        audio.src = audio.currentSrc;
+        audio.play();
+    };
   }
 
   changeVolume(val) {

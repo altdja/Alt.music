@@ -5,6 +5,7 @@ const path = require('path');
 const fs = require('fs');
 const cors = require('cors');
 const morgan = require('morgan');
+const icecast = require('icecast');
 const config = require('./config/local');
 
 const app = express();
@@ -13,6 +14,16 @@ app.use(express.static(__dirname + '/public'));
 
 app.use(cors());
 app.use(morgan('combined'));
+
+const url = 'http://91.240.87.220:8000/stream.mp3';
+ 
+icecast.get(url, function (res) {
+  console.log(res.headers);
+  res.on('metadata', function (metadata) {
+    var parsed = icecast.parse(metadata);
+    console.log(parsed);
+  });
+});
 
 if (config.server.playlist) {
   const audioFolder = '/project/public/tracks';
