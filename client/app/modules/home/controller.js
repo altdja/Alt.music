@@ -18,15 +18,12 @@ export default class HomepageController {
 
   init() {
     const myVar = setInterval(myTimer, 1000);
-    let oldTime = "";
-
     function myTimer() {
-      if ((this.audio.paused != true && (this.audio.currentTime - oldTime) == 0 )) {
+      if (this.audio.ended === true) {
           this.audio.src = "";
           this.audio.src = src;
           this.audio.play();
         }
-        oldTime = audio.currentTime;
     };
     return true;
   }
@@ -46,7 +43,7 @@ export default class HomepageController {
         });
       this.played = true;
     } else {
-      audio.pause();
+      this.audio.pause();
       this.played = false;      
     }
   }

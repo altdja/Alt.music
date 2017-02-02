@@ -5,25 +5,26 @@
     <div class="content">
       <button class="button" ng-click="$ctrl.play();" ng-disabled="$ctrl.loader">
         <p ng-if="!$ctrl.played">Play</p>
-        <!--<img ng-if="$ctrl.loader" class="loader" src="/img/loading.gif" alt="">-->
         <div ng-if="$ctrl.loader" class="wrapper">
           <div class="cssload-loader"></div>
         </div>
         <p ng-if="$ctrl.played && !$ctrl.loader">Stop</p>
       </button>
 
-      <p class="text" ng-model="$ctrl.value">Громкость: {{$ctrl.volume}}%</p>
-      <input class="volume" type="range" name="range" ng-model="$ctrl.volume" ng-change="$ctrl.changeVolume($ctrl.value);" min="0"  max="100">
+      <p class="text" ng-model="$ctrl.volume">Громкость: {{$ctrl.volume}}%</p>
+      <input class="volume" type="range" name="range" ng-model="$ctrl.volume" ng-change="$ctrl.changeVolume($ctrl.volume);" min="0"  max="100">
     </div>
     <div class="blur">
       <div class="bg-blur" src="" alt=""></div>
     </div>
   </div>
+  <div class="credits">
+    <p>Created by Alt. 2017.</p>
+  </div>
   <div class="bg-container">
     <div class="bg-blur" src="" alt=""></div>
   </div>
   <audio id="audio">
-      <source src="http://91.240.87.220:8000/stream.mp3" type="audio/mp3">
+      <source src="http://91.240.87.220:8000/stream.mp3" type="audio/mpeg">
   </audio>
 </div>
-

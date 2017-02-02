@@ -69,6 +69,15 @@ button:focus {
     top: 5%;
 }
 
+.credits{
+    position: absolute;
+    z-index: 4;
+    bottom: 0;
+    right: 10px;
+    font-size: 10px;
+    color: white;
+}
+
 .blur {
     height: 100%;
     width: 100%;
