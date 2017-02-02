@@ -14,18 +14,17 @@ export default class HomepageController {
     this.output =  new Audio();
     this.audio = $('#audio')[0];
     this.volume = 70;
-    // this.init();
   }
 
   init() {
-    var myVar = setInterval(myTimer, 1000);
-    var oldTime = "";
+    const myVar = setInterval(myTimer, 1000);
+    let oldTime = "";
 
     function myTimer() {
       if ((this.audio.paused != true && (this.audio.currentTime - oldTime) == 0 )) {
-        this.audio.src = "";
-        this.audio.src = src;
-        this.audio.play();
+          this.audio.src = "";
+          this.audio.src = src;
+          this.audio.play();
         }
         oldTime = audio.currentTime;
     };
@@ -43,6 +42,7 @@ export default class HomepageController {
         .then(() => {
           this.loader = false;
           this.scope.$apply();
+          this.init();
         });
       this.played = true;
     } else {
