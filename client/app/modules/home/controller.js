@@ -12,39 +12,41 @@ export default class HomepageController {
     this.played = false;
     this.loader = false;
     this.output =  new Audio();
-    document.body.appendChild(this.output);
-    this.output.id = 'audio';
-    this.volume = 50;
-    this.stopPlayingFix()
+    this.audio = $('#audio')[0];
+    this.volume = 70;
+    // this.init();
   }
 
-  stopPlayingFix() {
-    const audio = $('#audio')[0];
-    audio.onended = audio.onerror = function()
-    {
-        audio.src = audio.currentSrc;
-        audio.play();
+  init() {
+    var myVar = setInterval(myTimer, 1000);
+    var oldTime = "";
+
+    function myTimer() {
+      if ((this.audio.paused != true && (this.audio.currentTime - oldTime) == 0 )) {
+        this.audio.src = "";
+        this.audio.src = src;
+        this.audio.play();
+        }
+        oldTime = audio.currentTime;
     };
+    return true;
   }
 
   changeVolume(val) {
-    this.output.volume = val / 100;
+    this.audio.volume = val / 100;
   }
   
   play() {
     if (!this.played) {
       this.loader = true;      
-      this.output.src = src;
-      this.output.play()
+      this.audio.play()
         .then(() => {
           this.loader = false;
           this.scope.$apply();
         });
       this.played = true;
     } else {
-      $.each($('audio'), function () {
-        this.pause();
-      });
+      audio.pause();
       this.played = false;      
     }
   }

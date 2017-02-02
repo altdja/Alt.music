@@ -12,8 +12,8 @@
         <p ng-if="$ctrl.played && !$ctrl.loader">Stop</p>
       </button>
 
-      <p class="text" ng-model="$ctrl.value">Громкость: {{$ctrl.value}}%</p>
-      <input class="volume" type="range" name="range" ng-model="$ctrl.value" ng-change="$ctrl.changeVolume($ctrl.value);" min="0"  max="100">
+      <p class="text" ng-model="$ctrl.value">Громкость: {{$ctrl.volume}}%</p>
+      <input class="volume" type="range" name="range" ng-model="$ctrl.volume" ng-change="$ctrl.changeVolume($ctrl.value);" min="0"  max="100">
     </div>
     <div class="blur">
       <div class="bg-blur" src="" alt=""></div>
@@ -22,5 +22,8 @@
   <div class="bg-container">
     <div class="bg-blur" src="" alt=""></div>
   </div>
+  <audio id="audio">
+      <source src="http://91.240.87.220:8000/stream.mp3" type="audio/mp3">
+  </audio>
 </div>
 
