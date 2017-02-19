@@ -3,7 +3,7 @@
 import './styles.css';
 import $ from 'jquery';
 
-const src = 'http://91.240.87.220:8000/stream.mp3';
+const src = 'http://91.240.87.220:8000/stream';
 
 export default class HomepageController {
   constructor($scope, $state) {
