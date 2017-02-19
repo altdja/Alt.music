@@ -2,6 +2,17 @@
 
 import './styles.css';
 import $ from 'jquery';
+import io from 'socket.io-client';
+
+const socket = io('http://localhost:8081/');
+
+let name = '';
+socket.on('track', function(msg) {
+  if (name !== msg) {
+    name = msg;
+    $('#name').text(name);
+  }
+});
 
 const src = 'http://91.240.87.220:8000/stream';
 

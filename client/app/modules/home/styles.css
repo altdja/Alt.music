@@ -36,6 +36,12 @@ button:focus {
     z-index: 2;
 }
 
+#name {
+    color: white;
+    text-align: center;
+    height: 15px;
+}
+
 .content h1 {
     text-align: center;
     color: white;

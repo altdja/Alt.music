@@ -9,20 +9,34 @@ const icecast = require('icecast');
 const config = require('./config/local');
 
 const app = express();
+
 app.use(express.static(__dirname + '/build'));
 app.use(express.static(__dirname + '/public'));
 
 app.use(cors());
 app.use(morgan('combined'));
 
-const url = 'http://91.240.87.220:8000/stream.mp3';
- 
-icecast.get(url, function (res) {
-  console.log(res.headers);
-  res.on('metadata', function (metadata) {
-    var parsed = icecast.parse(metadata);
-    console.log(parsed);
-  });
+const server = app.listen(config.server.port, function () {
+  console.log(`Alt.music app listening on port ${config.server.port}!`);
+});
+
+const io = require('socket.io').listen(server);
+
+const url = 'http://91.240.87.220:8000/stream';
+
+let trackName = '';
+io.on('connection', function(socket){
+  setInterval( function() {
+    icecast.get(url, function (res) {
+      res.on('metadata', function (metadata) {
+        let parsed = icecast.parse(metadata);
+        if (trackName !== parsed.StreamTitle) {
+          trackName = parsed.StreamTitle;
+        };
+        io.emit('track', trackName);  
+      });
+    });
+  }, 1000);
 });
 
 if (config.server.playlist) {
@@ -40,10 +54,6 @@ if (config.server.playlist) {
     });
   });
 }
-
-app.listen(config.server.port, function () {
-  console.log(`Alt.music app listening on port ${config.server.port}!`);
-});
 
 app.get('/', function (req, res) {
     return res.sendFile(path.join(__dirname+'/public/index.html'));

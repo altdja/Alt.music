@@ -3,6 +3,7 @@
   <div class="row">
     <img class="logo" src="/img/alt-logo-shadow.png" alt="">
     <div class="content">
+      <p id="name"></p>
       <button class="button" ng-click="$ctrl.play();" ng-disabled="$ctrl.loader">
         <p ng-if="!$ctrl.played">Play</p>
         <div ng-if="$ctrl.loader" class="wrapper">
