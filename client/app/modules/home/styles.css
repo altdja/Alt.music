@@ -26,7 +26,7 @@ button:focus {
 
 .content {
     width: 300px;
-    height: 150px;
+    height: 200px;
     position: absolute;
     margin: auto;
     left: 0;
@@ -201,7 +201,6 @@ button:focus {
 }
 
 .cssload-loader {
-		/*background-color: white;*/
 		animation: cssload-flower-fan 0.46s infinite linear;
 		-o-animation: cssload-flower-fan 0.46s infinite linear;
 		-ms-animation: cssload-flower-fan 0.46s infinite linear;
@@ -212,7 +211,6 @@ button:focus {
 	content: "";
 	width: 80%;
 	height: 80%;
-	/*background-color: white;*/
 	top: 10%;
 	left: 10%;
 	box-shadow: 5px -3px 0 rgba(255,100,100,0.7),
@@ -236,16 +234,13 @@ button:focus {
 				-3px 5px 0 rgba(100,100,255,0.7),
 				-5px -5px 0 rgba(240,240,120,0.7);
 }
+
 .cssload-loader:after{
 	content: "";
-	/*border: 3px solid white;*/
 	z-index: 2;
 	top: -3px;
 	left: -3px;
 }
-
-
-
 
 @keyframes cssload-flower-fan {
 	0%	 { transform: rotate(0deg); }

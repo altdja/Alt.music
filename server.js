@@ -22,7 +22,7 @@ const server = app.listen(config.server.port, function () {
 
 const io = require('socket.io').listen(server);
 
-const url = 'http://91.240.87.220:8000/stream';
+const url = 'http://91.240.87.220:8000/stream.ogg';
 
 let trackName = '';
 io.on('connection', function(socket){
@@ -33,10 +33,10 @@ io.on('connection', function(socket){
         if (trackName !== parsed.StreamTitle) {
           trackName = parsed.StreamTitle;
         };
-        io.emit('track', trackName);  
+        io.emit('track', trackName);
       });
-    });
-  }, 1000);
+    })
+  }, 5000);
 });
 
 if (config.server.playlist) {

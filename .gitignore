@@ -38,3 +38,4 @@ node_modules
 /config/local.js
 /build
 /site
+/.vscode

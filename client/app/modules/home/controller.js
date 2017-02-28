@@ -14,7 +14,7 @@ socket.on('track', function(msg) {
   }
 });
 
-const src = 'http://91.240.87.220:8000/stream';
+const src = 'http://91.240.87.220:8000/stream.ogg';
 
 export default class HomepageController {
   constructor($scope, $state) {
@@ -24,7 +24,40 @@ export default class HomepageController {
     this.loader = false;
     this.output =  new Audio();
     this.audio = $('#audio')[0];
-    this.volume = 70;
+    this.getVolume();
+  }
+
+  getVolume() {
+    const volume = this.getCookie("volume");
+    if (volume) {
+      this.volume = JSON.parse(volume);
+      this.audio.volume = volume / 100;
+    } else {
+      this.volume = 70;
+      this.setCookie(this.volume);
+    }
+  }
+
+  getCookie(name) {
+    var name = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+  }
+
+  setCookie(value) {
+    const d = new Date();
+    d.setTime(d.getTime() + (15 * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + d.toUTCString();
+    document.cookie = "volume=" + value + ";" + expires + ";path=/";
   }
 
   init() {
@@ -41,6 +74,7 @@ export default class HomepageController {
 
   changeVolume(val) {
     this.audio.volume = val / 100;
+    this.setCookie(val);
   }
   
   play() {
