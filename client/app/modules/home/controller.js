@@ -25,6 +25,15 @@ export default class HomepageController {
     this.output =  new Audio();
     this.audio = $('#audio')[0];
     this.getVolume();
+    this.init();
+  }
+
+  init() {
+    const bg = $('.bg-blur');
+    const min = 1;
+    const max = 11;
+    const i = Math.floor(Math.random() * (max - min + 1)) + min;
+    bg.css('background-image', `url(/img/bg/${i}.jpg)`);    
   }
 
   getVolume() {
@@ -60,7 +69,7 @@ export default class HomepageController {
     document.cookie = "volume=" + value + ";" + expires + ";path=/";
   }
 
-  init() {
+  stopFix() {
     const myVar = setInterval(myTimer, 1000);
     function myTimer() {
       if (this.audio.ended === true) {
@@ -84,7 +93,7 @@ export default class HomepageController {
         .then(() => {
           this.loader = false;
           this.scope.$apply();
-          this.init();
+          this.stopFix();
         });
       this.played = true;
     } else {
