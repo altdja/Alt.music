@@ -1,7 +1,7 @@
 Alt's music
 
 1. Install: install npm packege via `npm i`;
-2. Create config file PATH `./config/local.js`
+2. Create config file PATH `./config/local.js`;
     ```javascript
     module.exports.server = {
         port: 8081,
