@@ -11,6 +11,7 @@ socket.on('track', function(msg) {
   if (name !== msg) {
     name = msg;
     $('#name').text(name);
+    document.title = name;
   }
 });
 
