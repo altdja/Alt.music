@@ -22,6 +22,7 @@ button:focus {
     left: 0;
     right: 0;
     margin: auto;
+    background-color : rgba(0, 0, 0, 0.5);
 }
 
 .content {
@@ -47,20 +48,6 @@ button:focus {
     color: white;
 }
 
-.bg-container {
-    height: 100%;
-    width: 100%;
-}
-
-.bg-blur {
-    background-image: url(/img/bg/6.jpg);
-    background-size: cover;
-    height: 100%;
-    min-width: 100%;
-    min-height: 100%;
-    background-position: center;
-}
-
 .bg {
     height: 100%;
     min-width: 100%;
@@ -84,19 +71,9 @@ button:focus {
     color: white;
 }
 
-.blur {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    filter: blur(10px);
-    -webkit-filter: blur(10px);
-    -moz-filter: blur(10px);
-    -o-filter: blur(10px);
-    -ms-filter: blur(10px);
-    overflow: hidden;
-}
-
 .container {
+    background-size: cover;
+    background-position: center;
     height: 100%;
     display: flex;
     align-items: center;
@@ -127,6 +104,7 @@ button:focus {
 }
 
 .volume-box {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .4);
     background-color: rgba(228, 225, 225, 0.4);;
     padding: 1px 5px;
     border-radius: 3px;
@@ -146,123 +124,46 @@ button:focus {
 
 /*LOADER*/
 
-.wrapper {
-	position: absolute;
-    /* padding-left: 1em; */
-    /* padding-right: 1em; */
-    /* margin: auto; */
-    /* display: block; */
-    /* width: 195px; */
-    top: -46px;
-    left: 70px;
+.loading {
+  margin-top: 12px;
 }
 
-.cssload-loader {
-	width: 49px;
-	height: 49px;
-	border-radius: 50%;
-	margin: 3em;
-	display: inline-block;
-	position: relative;
-	vertical-align: middle;
+.loading-bar {
+  display: inline-block;
+  width: 4px;
+  height: 18px;
+  border-radius: 4px;
+  animation: loading 1s ease-in-out infinite;
 }
 
-.cssload-loader {
-	width: 49px;
-	height: 49px;
-	border-radius: 50%;
-	margin: 3em;
-	display: inline-block;
-	position: relative;
-	vertical-align: middle;
-}
-.cssload-loader,
-.cssload-loader:before,
-.cssload-loader:after {
-	animation: 1.15s infinite ease-in-out;
-		-o-animation: 1.15s infinite ease-in-out;
-		-ms-animation: 1.15s infinite ease-in-out;
-		-webkit-animation: 1.15s infinite ease-in-out;
-		-moz-animation: 1.15s infinite ease-in-out;
-}
-.cssload-loader:before,
-.cssload-loader:after {
-	width: 100%; 
-	height: 100%;
-	border-radius: 50%;
-	position: absolute;
-	top: 0;
-	left: 0;
+.loading-bar:nth-child(1) {
+  background-color: #3498db;
+  animation-delay: 0;
 }
 
-.cssload-loader:before,
-.cssload-loader:after {
-		content: "";
+.loading-bar:nth-child(2) {
+  background-color: #c0392b;
+  animation-delay: 0.09s;
 }
 
-.cssload-loader {
-		animation: cssload-flower-fan 0.46s infinite linear;
-		-o-animation: cssload-flower-fan 0.46s infinite linear;
-		-ms-animation: cssload-flower-fan 0.46s infinite linear;
-		-webkit-animation: cssload-flower-fan 0.46s infinite linear;
-		-moz-animation: cssload-flower-fan 0.46s infinite linear;
-}
-.cssload-loader:before{
-	content: "";
-	width: 80%;
-	height: 80%;
-	top: 10%;
-	left: 10%;
-	box-shadow: 5px -3px 0 rgba(255,100,100,0.7),
-				5px 5px 0 rgba(100,255,100,0.7),
-				-3px 5px 0 rgba(100,100,255,0.7),
-				-5px -5px 0 rgba(240,240,120,0.7);
-		-o-box-shadow: 5px -3px 0 rgba(255,100,100,0.7),
-				5px 5px 0 rgba(100,255,100,0.7),
-				-3px 5px 0 rgba(100,100,255,0.7),
-				-5px -5px 0 rgba(240,240,120,0.7);
-		-ms-box-shadow: 5px -3px 0 rgba(255,100,100,0.7),
-				5px 5px 0 rgba(100,255,100,0.7),
-				-3px 5px 0 rgba(100,100,255,0.7),
-				-5px -5px 0 rgba(240,240,120,0.7);
-		-webkit-box-shadow: 5px -3px 0 rgba(255,100,100,0.7),
-				5px 5px 0 rgba(100,255,100,0.7),
-				-3px 5px 0 rgba(100,100,255,0.7),
-				-5px -5px 0 rgba(240,240,120,0.7);
-		-moz-box-shadow: 5px -3px 0 rgba(255,100,100,0.7),
-				5px 5px 0 rgba(100,255,100,0.7),
-				-3px 5px 0 rgba(100,100,255,0.7),
-				-5px -5px 0 rgba(240,240,120,0.7);
+.loading-bar:nth-child(3) {
+  background-color: #f1c40f;
+  animation-delay: .18s;
 }
 
-.cssload-loader:after{
-	content: "";
-	z-index: 2;
-	top: -3px;
-	left: -3px;
+.loading-bar:nth-child(4) {
+  background-color: #27ae60;
+  animation-delay: .27s;
 }
 
-@keyframes cssload-flower-fan {
-	0%	 { transform: rotate(0deg); }
-	100% { transform: rotate(360deg); }
-}
-
-@-o-keyframes cssload-flower-fan {
-	0%	 { -o-transform: rotate(0deg); }
-	100% { -o-transform: rotate(360deg); }
-}
-
-@-ms-keyframes cssload-flower-fan {
-	0%	 { -ms-transform: rotate(0deg); }
-	100% { -ms-transform: rotate(360deg); }
-}
-
-@-webkit-keyframes cssload-flower-fan {
-	0%	 { -webkit-transform: rotate(0deg); }
-	100% { -webkit-transform: rotate(360deg); }
-}
-
-@-moz-keyframes cssload-flower-fan {
-	0%	 { -moz-transform: rotate(0deg); }
-	100% { -moz-transform: rotate(360deg); }
+@keyframes loading {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1, 2.2);
+  }
+  40% {
+    transform: scale(1);
+  }
 }

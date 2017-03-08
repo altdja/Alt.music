@@ -29,11 +29,11 @@ export default class HomepageController {
   }
 
   init() {
-    const bg = $('.bg-blur');
+    const bg = $('.container');
     const min = 1;
     const max = 11;
     const i = Math.floor(Math.random() * (max - min + 1)) + min;
-    bg.css('background-image', `url(/img/bg/${i}.jpg)`);    
+    bg.css('background-image', `url(/img/bg/${i}.jpg)`);   
   }
 
   getVolume() {

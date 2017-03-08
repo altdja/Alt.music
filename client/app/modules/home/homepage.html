@@ -6,7 +6,12 @@
       <button class="button" ng-click="$ctrl.play();" ng-disabled="$ctrl.loader">
         <p ng-if="!$ctrl.played">Play</p>
         <div ng-if="$ctrl.loader" class="wrapper">
-          <div class="cssload-loader"></div>
+          <div class="loading">
+            <div class="loading-bar"></div>
+            <div class="loading-bar"></div>
+            <div class="loading-bar"></div>
+            <div class="loading-bar"></div>
+          </div>
         </div>
         <p ng-if="$ctrl.played && !$ctrl.loader">Stop</p>
       </button>
@@ -16,15 +21,9 @@
         <input class="volume" type="range" name="range" ng-model="$ctrl.volume" ng-change="$ctrl.changeVolume($ctrl.volume);" min="0"  max="100">
       </div>
     </div>
-    <div class="blur">
-      <div class="bg-blur" src="" alt=""></div>
-    </div>
   </div>
   <div class="credits">
     <p>Created by Alt. 2017.</p>
-  </div>
-  <div class="bg-container">
-    <div class="bg-blur" src="" alt=""></div>
   </div>
   <audio id="audio">
       <source src="http://91.240.87.220:8000/stream.ogg" type="audio/mpeg">
