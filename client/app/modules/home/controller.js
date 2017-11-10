@@ -34,7 +34,7 @@ export default class HomepageController {
     const min = 1;
     const max = 11;
     const i = Math.floor(Math.random() * (max - min + 1)) + min;
-    bg.css('background-image', `url(/img/bg/${i}.jpg)`);   
+    bg.css('background-image', `url(/img/bg/${i}.jpg)`);
   }
 
   getVolume() {
@@ -89,7 +89,7 @@ export default class HomepageController {
   
   play() {
     if (!this.played) {
-      this.loader = true;      
+      this.loader = true;
       this.audio.play()
         .then(() => {
           this.loader = false;
@@ -99,7 +99,7 @@ export default class HomepageController {
       this.played = true;
     } else {
       this.audio.pause();
-      this.played = false;      
+      this.played = false;
     }
   }
 }

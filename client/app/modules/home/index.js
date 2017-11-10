@@ -1,5 +1,4 @@
 import angular from 'angular';
-import ngAudio from 'angular-audio';
 
 import routing from './routes';
 import HomeController from './controller';
