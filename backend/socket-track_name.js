@@ -1,6 +1,5 @@
 const io = require('socket.io');
 const icecast = require('icecast');
-const axios = require('axios');
 
 let trackName = '';
 
