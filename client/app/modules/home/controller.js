@@ -15,7 +15,7 @@ socket.on('track', function(msg) {
   }
 });
 
-const src = 'http://91.240.87.220:8000/stream.ogg';
+const src = 'http://80.87.199.237:8000/alt-rock.mp3';
 
 export default class HomepageController {
   constructor($scope, $state) {
