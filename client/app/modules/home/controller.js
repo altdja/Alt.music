@@ -4,7 +4,7 @@ import './styles.css';
 import $ from 'jquery';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:8081/');
+const socket = io('http://80.87.199.237:8081/');
 
 let name = '';
 socket.on('track', function(msg) {
